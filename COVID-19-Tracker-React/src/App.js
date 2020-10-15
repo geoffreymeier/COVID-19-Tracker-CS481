@@ -1,32 +1,32 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import USAMap from "react-usa-map";
-import Model from "./components/Model/Model";
+import Modal from "./components/Model/Model";
 import Header from "./components/Header/Header";
-
-
+import { getCovidStatesData, getCovidUSData } from "./services/covidApi";
 
 function App() {
   const [activeState, setActiveState] = useState(null);
   const [covidUSData, setCovidUSData] = useState(null);
   const [covidStatesData, setCovidStatesData] = useState(null);
   const [fetchError, setFetchError] = useState(null);
-  const [modelOpen, toggleModelOpen] = useState(false);
+  const [modalOpen, toggleModalOpen] = useState(false);
 
+  useEffect(() => {
+    getCovidStatesData().then(setCovidStatesData).catch(setFetchError);
+    getCovidUSData().then(setCovidUSData).catch(setFetchError);
+  }, []);
 
+  const statesCustomConfig = () => {
+    const generateHexColorForState = (stateCode) => {
+      const hexValue =
+          255;
 
+      return `rgb(220, ${hexValue}, ${hexValue}`;
+    };
 
-
-   const statesCustomConfig = () => {
-     const generateHexColorForState = (stateCode) => {
-        const hexValue = 255;
-
-       return `rgb(220, ${hexValue}, ${hexValue}`;
-     };
-
-      return covidUSData && covidStatesData
-        ? 
-        {
+    return covidUSData && covidStatesData
+      ? {
           AL: {
             fill: `${generateHexColorForState("AL")})`,
           },
@@ -206,7 +206,7 @@ function App() {
         (o) => o.state === event.target.dataset.name
       );
       setActiveState(stateData);
-      toggleModelOpen((open) => !open);
+      toggleModalOpen((open) => !open);
     }
   };
 
@@ -218,10 +218,10 @@ function App() {
         customize={statesCustomConfig()}
         onClick={handleMapClick}
       />
-      <Model
+      <Modal
         activeState={activeState}
-        modelOpen={modelOpen}
-        toggleOpen={toggleModelOpen}
+        modalOpen={modalOpen}
+        toggleOpen={toggleModalOpen}
       />
     </div>
   );
