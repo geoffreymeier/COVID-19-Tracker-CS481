@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import USAMap from "react-usa-map";
-import Modal from "./components/Model/Model";
+import Model from "./components/Model/Model";
 import Header from "./components/Header/Header";
 import { getCovidStatesData, getCovidUSData } from "./services/covidApi";
 
@@ -218,7 +218,7 @@ function App() {
         customize={statesCustomConfig()}
         onClick={handleMapClick}
       />
-      <Modal
+      <Model
         activeState={activeState}
         modalOpen={modalOpen}
         toggleOpen={toggleModalOpen}
