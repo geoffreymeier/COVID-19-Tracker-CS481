@@ -1,7 +1,7 @@
 import React from "react";
 import "./StateDisplay.scss";
 import states from "../../states";
-
+import moment from "moment";
 
 const StateDisplay = ({ stateData }) => {
   return (
@@ -9,35 +9,35 @@ const StateDisplay = ({ stateData }) => {
       <h1>{states[stateData.state]}</h1>
       <p className="last-updated">
         <span>Data last updated: </span>
-        {"Test Text"}
+        {moment(stateData.dateModified).format("MMMM Do YYYY, h:mm:ss a")}
       </p>
       <p className="total-tested">
         <span>Total Tested: </span>
-        {"Test Text"}
+        {stateData.totalTestResults}
       </p>
       <p className="total-positive">
         <span>Positive Tests</span>
-        {"Test Text"}
+        {stateData.positive}
       </p>
       <p className="total-negative">
         <span>Negative Tests</span>
-        {"Test Text"}
+        {stateData.negative}
       </p>
       <p className="total-hospitalized">
         <span>Currently Hospitalized: </span>
-        {"Test Text"}
+        {stateData.hospitalizedCurrently || "No Data"}
       </p>
       <p className="total-recovered">
         <span>Recovered: </span>
-        {"Test Text"}
+        {stateData.recovered || "No Data"}
       </p>
       <p className="total-deaths">
         <span>Total Deaths: </span>
-        {"Test Text"}
+        {stateData.death}
       </p>
       <p className="total-icu">
         <span>In ICU </span>
-        {"Test Text"}
+        {stateData.inIcuCurrently || "No Data"}
       </p>
     </div>
   );
