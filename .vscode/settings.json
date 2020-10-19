@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/home/geoffreymeier/.local/share/virtualenvs/COVID-19-Tracker-CS481-pmsKYoE1/bin/python"
+    "python.pythonPath": "/home/geoffreymeier/.local/share/virtualenvs/COVID-19-Tracker-CS481-pmsKYoE1/bin/python",
+    "python.formatting.provider": "black"
 }
