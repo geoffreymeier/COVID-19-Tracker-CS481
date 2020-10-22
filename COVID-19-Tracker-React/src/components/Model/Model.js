@@ -2,10 +2,10 @@ import React from "react";
 import StateDisplay from "../StateDisplay/StateDisplay";
 import "./Model.scss";
 
-const Model = ({ activeState, toggleOpen, modalOpen }) => {
+const Model = ({ activeState, toggleOpen, modelOpen }) => {
   console.log(activeState);
   return (
-    <div className={`Model ${!modalOpen && "hidden"}`}>
+    <div className={`Model ${!modelOpen && "hidden"}`}>
       <button
         className="close-button"
         onClick={() => toggleOpen((open) => !open)}

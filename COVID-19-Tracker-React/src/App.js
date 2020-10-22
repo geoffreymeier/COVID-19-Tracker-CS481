@@ -10,7 +10,7 @@ function App() {
   const [covidUSData, setCovidUSData] = useState(null);
   const [covidStatesData, setCovidStatesData] = useState(null);
   const [fetchError, setFetchError] = useState(null);
-  const [modalOpen, toggleModalOpen] = useState(false);
+  const [modelOpen, toggleModelOpen] = useState(false);
 
   useEffect(() => {
     getCovidStatesData().then(setCovidStatesData).catch(setFetchError);
@@ -206,7 +206,7 @@ function App() {
         (o) => o.state === event.target.dataset.name
       );
       setActiveState(stateData);
-      toggleModalOpen((open) => !open);
+      toggleModelOpen((open) => !open);
     }
   };
 
@@ -220,8 +220,8 @@ function App() {
       />
       <Model
         activeState={activeState}
-        modalOpen={modalOpen}
-        toggleOpen={toggleModalOpen}
+        modelOpen={modelOpen}
+        toggleOpen={toggleModelOpen}
       />
     </div>
   );
