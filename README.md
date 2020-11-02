@@ -1,6 +1,6 @@
 # COVID-19-Tracker-CS481
 
-[![Build Status](https://travis-ci.com/geoffreymeier/cs453-project2.svg?token=seeYqEhKQAwzasyLancE&branch=master)](https://travis-ci.com/geoffreymeier/cs453-project2)
+[![Build Status](https://travis-ci.com/geoffreymeier/COVID-19-Tracker-CS481.svg?branch=master)](https://travis-ci.com/geoffreymeier/COVID-19-Tracker-CS481)
 
 ## Install
 
