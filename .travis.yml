@@ -1,11 +1,12 @@
 language: python
 python:
-    - "3.6"
     - "3.7"
     - "3.8"
 services:
     - sqlite3
 env:
     - DJANGO=3.1 DB=sqlite3
+install:
+    - pip install django
 script:
     - cd COVID_19_Tracker; python3 manage.py test
