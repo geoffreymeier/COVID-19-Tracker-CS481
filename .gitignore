@@ -3,7 +3,7 @@ Pipfile*
 node_modules/
 
 
-.vscode
+.vscode/
 *.code-workspace
 
 # Local History for Visual Studio Code

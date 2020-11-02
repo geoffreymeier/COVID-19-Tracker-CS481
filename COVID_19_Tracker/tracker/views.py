@@ -1,4 +1,6 @@
+from tracker.models import CovidData
 from django.http import HttpResponse, JsonResponse
+from django.core import serializers
 
 
 def index(request):
@@ -11,7 +13,6 @@ def us_data_view(request, *args, **kwargs):
     return JsonResponse(data, status=200)
 
 def states_data_view(request, *args, **kwargs):
-    data = {
-        # TODO - Return data
-    }
+    CovidData_json = serializers.serialize("json",CovidData.objects.all())
+    data = {"CovidData": CovidData_json}
     return JsonResponse(data, status=200)
