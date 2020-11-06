@@ -7,6 +7,6 @@ services:
 env:
     - DJANGO=3.1 DB=sqlite3
 install:
-    - pip install django
+    - pip install django; pip install django-cors-headers
 script:
     - cd COVID_19_Tracker; python3 manage.py test
