@@ -4,6 +4,7 @@ import USAMap from "react-usa-map";
 import Model from "./components/Model/Model";
 import Header from "./components/Header/Header";
 import { getCovidStatesData, getCovidUSData } from "./services/covidApi";
+import NationalDisplay from "./components/NationalDisplay/NationalDisplay";
 
 function App() {
   const [activeState, setActiveState] = useState(null);
@@ -17,9 +18,15 @@ function App() {
     getCovidUSData().then(setCovidUSData).catch(setFetchError);
   }, []);
 
+  //Where we get the coloring of states using covid data. Re-write using database data or set hex
+  // value to 255 to get a standard map.
   const statesCustomConfig = () => {
     const generateHexColorForState = (stateCode) => {
+      const highest = covidStatesData.sort((a, b) => b.total - a.total)[0];
       const hexValue =
+         255 -
+         (covidStatesData.find((o) => o.state === stateCode).totalTestResults /
+           highest.totalTestResults) *
           255;
 
       return `rgb(220, ${hexValue}, ${hexValue}`;
@@ -218,6 +225,7 @@ function App() {
         customize={statesCustomConfig()}
         onClick={handleMapClick}
       />
+      <NationalDisplay data={covidUSData} />
       <Model
         activeState={activeState}
         modelOpen={modelOpen}

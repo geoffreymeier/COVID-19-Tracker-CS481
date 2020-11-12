@@ -1,6 +1,5 @@
 export const getCovidStatesData = () => {
-  // return fetch("https://api.covidtracking.com/api/states")
-  return fetch("http://localhost:8000/tracker/api/states_data/")
+  return fetch("https://api.covidtracking.com/api/states")
     .then((res) => res.json())
     .catch(() => {
       throw "Unable to fetch COVID-19 data.";
