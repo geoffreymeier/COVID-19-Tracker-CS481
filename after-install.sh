@@ -1,2 +1,2 @@
-cd /var/COVID-Tracker
+cd ~/COVID-Tracker
 sudo npm install
