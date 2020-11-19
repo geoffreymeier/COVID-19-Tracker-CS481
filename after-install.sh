@@ -1,2 +1,2 @@
-cd /COVID-19-Tracker-React
+cd /webapps/COVID-Tracker
 sudo npm install
