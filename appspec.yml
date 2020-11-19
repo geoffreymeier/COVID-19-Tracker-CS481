@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /COVID-19-Tracker-React
-    destination: /var/COVID-Tracker
+    destination: /home/ubuntu/COVID-Tracker
 hooks:
   BeforeInstall:
     - location: /before-install.sh
