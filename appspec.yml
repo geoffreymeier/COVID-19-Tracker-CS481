@@ -4,4 +4,15 @@ files:
   - source: /COVID-19-Tracker-React
     destination: /webapps/COVID-Tracker
 hooks:
-  
+  BeforeInstall:
+    - location: /before-install.sh
+    timeout: 300
+    runas: ubuntu
+  AfterInstall:
+    - location: /after-install.sh
+    timeout: 300
+    runas: ubuntu
+  ApplicationStart:
+    - location: /application-start.sh
+    timeout: 300
+    runas: ubuntu
