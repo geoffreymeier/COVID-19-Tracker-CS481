@@ -1,3 +1,2 @@
-pwd
 cd ~/COVID-Tracker
-sudo npm start
+sudo pm2 start npm -- start
