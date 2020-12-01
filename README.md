@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.com/geoffreymeier/COVID-19-Tracker-CS481.svg?branch=master)](https://travis-ci.com/geoffreymeier/COVID-19-Tracker-CS481)
 
 Link to active webapp: http://ec2-54-69-145-50.us-west-2.compute.amazonaws.com:3000
+Link to project overiew page: https://geoffreymeier.github.io/COVID-19-Tracker-CS481/
 
 ## Install Dependencies
 
