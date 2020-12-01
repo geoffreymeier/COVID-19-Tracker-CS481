@@ -1,4 +1,4 @@
-# COVID-19 Tracker
+# USA COVID-19 Tracker
 
 Watch the video below to see a brief overview of the web app:
 
